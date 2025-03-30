@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Software - Protection Anti-Cheat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00ff88;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://cdn.discordapp.com/attachments/1335589067865460736/1355950377106673664/hhghg.png?ex=67eacab2&is=67e97932&hm=37b9cc089293c4653b1e0fdd316f279ebb2c089e24836faf4ed559591dba1b22&') center/cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #00ff88;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            color: #cccccc;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            background-color: #00ff88;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background-color: #00cc6a;
+        }
+
+        .features {
+            padding: 4rem 2rem;
+            background-color: #111111;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .download-section {
+            padding: 4rem 2rem;
+            background-color: #0a0a0a;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .product-title {
+            color: #00ff88;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: #cccccc;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            color: #00ff88;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #00ff88;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            transform: scale(1.05);
+            background-color: #00cc6a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#features">Fonctionnalités</a></li>
+            <li><a href="#download">Télécharger</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1 class="floating-element">Quest Software</h1>
+        <p>La solution pour tricher et troll sur FiveM</p>
+        <a href="#download" class="cta-button">Download</a>
+    </section>
+
+    <section class="features" id="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Pourquoi nous ?</h3>
+                <p>Car nous somme le site le plus safe pour avoir les meilleur menu troll sur FiveM</p>
+            </div>
+            <div class="feature-card">
+                <h3>Meilleur pour troll</h3>
+                <p>Impact minimal sur les performances de jeu</p>
+            </div>
+            <div class="feature-card">
+                <h3>Mises à jour continues</h3>
+                <p>Protection constamment mise à jour contre les nouvelles menaces</p>
+            </div>
+            <div class="feature-card">
+                <h3>Support 24/7</h3>
+                <p>Une équipe dédiée à votre service</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="download-section" id="download">
+        <div class="products-container">
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://cdn.discordapp.com/attachments/1335589067865460736/1355950377106673664/hhghg.png" alt="FiveM" class="product-image">
+                    <h2 class="product-title">Keyser crack</h2>
+                    <p class="product-description">By Hello kity software</p>
+                    <p class="product-price">0 €</p>
+                    <a href="https://cdn.discordapp.com/attachments/1354936916545634415/1354937021298245632/keycheese.exe?ex=67ea66af&is=67e9152f&hm=22c8649abd6e605e1647036520306b23b836774ff2630ab70609e6a9fa948893&" class="buy-button">Acheter maintenant</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://cdn.discordapp.com/attachments/1335589067865460736/1355950377106673664/hhghg.png" alt="Minecraft" class="product-image">
+                    <h2 class="product-title">Vape V4 crack</h2>
+                    <p class="product-description">By xera discord </p>
+                    <p class="product-price">0 €</p>
+                    <a href="https://cdn.discordapp.com/attachments/1330305718997221416/1330315171314270289/vapev4.exe?ex=67ea79cc&is=67e9284c&hm=ba05815a3605ee54dfa874f3837182016b7c4f4ed62ca6b0c338b4c2904bfd07&" class="buy-button">Acheter maintenant</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://cdn.discordapp.com/attachments/1335589067865460736/1355950377106673664/hhghg.png" alt="Soon" class="product-image">
+                    <h2 class="product-title">Soon</h2>
+                    <p class="product-description">Soon</p>
+                    <p class="product-price">0 €</p>
+                    <a href="https" class="buy-button">Acheter maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
